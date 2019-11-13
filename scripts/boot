@@ -73,6 +73,9 @@ fi
 # 4) 'wait' on the command (wait is interrupted by an incoming TERM to the subshell, whereas running 3) in the foreground would wait for that 3) to finish before triggering the trap)
 # 5) add the PID of the subshell to the array that the EXIT trap further above uses to clean everything up
 
+echo "Printing config"
+cat config/nginx.conf
+
 echo "Starting log redirection..." >&2
 (
     trap 'echo "logs" >&3;' EXIT
